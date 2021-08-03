@@ -1,11 +1,13 @@
-import React from 'react'
+import * as  React from 'react'
+import {Box, Text} from '@chakra-ui/react'
 
-
-function Logo() {
+const Logo = (props) =>  {
   return (
-    <div>
-      
-    </div>
+    <Box {...props}>
+      <Text fontSize="lg" fontWeight="bold"> 
+        AbelGechure
+      </Text>
+    </Box>
   )
 }
 
