@@ -1,12 +1,12 @@
 import * as  React from 'react'
-import {Box, Text} from '@chakra-ui/react'
+import {Box, Heading} from '@chakra-ui/react'
 
 const Logo = (props) =>  {
   return (
-    <Box {...props}>
-      <Text fontSize="lg" fontWeight="bold"> 
+    <Box align="center" mr={5} {...props}>
+      <Heading > 
         AbelGechure
-      </Text>
+      </Heading>
     </Box>
   )
 }
