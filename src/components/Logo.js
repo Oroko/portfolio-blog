@@ -4,7 +4,7 @@ import {Box, Heading} from '@chakra-ui/react'
 const Logo = (props) =>  {
   return (
     <Box align="center" mr={5} {...props}>
-      <Heading > 
+      <Heading color="teal.500" > 
         AbelGechure
       </Heading>
     </Box>

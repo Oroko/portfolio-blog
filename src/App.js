@@ -8,8 +8,10 @@ import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Home from './components/Home'
 
+
 function App() {
   return (
+    <>
     <Router>
       <Navbar />
         <Switch>
@@ -31,6 +33,8 @@ function App() {
         </Switch>
       
     </Router>
+    
+    </>
   );
 }
 
