@@ -1,13 +1,18 @@
 import React from 'react'
 import Logo from './Logo'
 import {Link } from 'react-router-dom'
-import {Box, Flex, Text, useColorMode} from "@chakra-ui/react"
+import {Box, Flex, Text, useColorMode } from "@chakra-ui/react"
 import {IconButton} from "@chakra-ui/button"
-import {FaSun, FaMoon } from 'react-icons/fa'
+import {FaSun, FaMoon} from 'react-icons/fa'
+//import { HamburgerIcon } from '@chakra-ui/icons'
+
+
 
 
 function Navbar(props) {
   const {colorMode, toggleColorMode} = useColorMode() 
+
+  
   const isDark = colorMode === "dark"
   return (
     <Flex
@@ -15,9 +20,9 @@ function Navbar(props) {
       align="center"
       wrap="wrap"
       padding="1.5rem"
-      color="000000"
-      
+      color="teal.400"
       {...props}
+      
     >
       <Box
         display="flex"
@@ -26,12 +31,13 @@ function Navbar(props) {
         justifyContent="space-between"
         flexGrow={1}
         color="teal.400"
+        
       >
         <Box>
           <Link to="/">
             <Logo />
           </Link>
-        </Box>
+        </Box> 
         <Box
           display="flex"
           width="400px"
@@ -44,12 +50,13 @@ function Navbar(props) {
           </Link>
           <Link to="/blog">Blog</Link>
           <Link to="/contact">Contact</Link>
+          
           <IconButton
             size="sm"
             onClick={toggleColorMode}
             icon={isDark ? <FaSun /> : <FaMoon />}
             isRound="true"
-          ></IconButton>
+          />
         </Box>
       </Box>
     </Flex>
