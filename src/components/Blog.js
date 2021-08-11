@@ -1,14 +1,18 @@
-import React from 'react'
 
-import {useSelector} from 'react-redux'
+import React from "react";
 
-function Blog() {
-  const test = useSelector(state => state.testReducer)
-  return (
-    <div>
-      {test}
-    </div>
-  )
-}
+const  Blog = ({posts}) => {
+ 
+    return (
+      <div>
+        <h4>Posts</h4>
+        {posts && posts.map(post => <li key={post.id}>{post.title}</li>)}
+        {/* <ul>{this.props.posts !== undefined ? this.props.posts.map(post => post.attributes['title']) : 'No Data'}</ul> */}
+      </div>
+    );
+  }
 
-export default Blog
+
+
+
+export default Blog;
