@@ -43,17 +43,16 @@ const BlogInput = () => {
   };
   return (
     <>
-      <Button onClick={onOpen} colorScheme="blue">
+      <Button onClick={onOpen} alignItems="center" colorScheme="teal">
         Add new Post
       </Button>
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay>
-          <ModalContent>
+        <ModalOverlay >
+          <ModalContent maxW="50rem" >
             <ModalHeader>Add new post</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-            
-              <FormControl >
+              <FormControl>
                 <FormLabel>Post title</FormLabel>
                 <Input
                   type="text"
@@ -64,13 +63,19 @@ const BlogInput = () => {
                 <Textarea
                   name="content"
                   onChange={(event) => handleChange(event)}
+                  height="325px"
                 />
               </FormControl>
             </ModalBody>
             <ModalFooter>
               <HStack spacing={4}>
-                <Button  onClick={onClose}>Close</Button>
-                <Button type="submit" onClick={(event) => handleAddPost()} colorScheme="blue" isLoading={isSaving}>
+                <Button onClick={onClose}>Close</Button>
+                <Button
+                  type="submit"
+                  onClick={(event) => handleAddPost()}
+                  colorScheme="blue"
+                  isLoading={isSaving}
+                >
                   Save
                 </Button>
               </HStack>
@@ -78,23 +83,7 @@ const BlogInput = () => {
           </ModalContent>
         </ModalOverlay>
       </Modal>
-      {/* <form onSubmit={handleSubmit}>
-        <p>
-          <label>Title</label>
-          <input type="text" onChange={handleChange} name="title" />
-        </p>
-        <p>
-          <label>Content</label>
-          <textarea
-            name="content"
-            cols="30"
-            onChange={handleChange}
-            rows="10"
-          />
-        </p>
-
-        <button type="submit">Add Post</button>
-      </form> */}
+     
     </>
   );
 };

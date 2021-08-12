@@ -2,7 +2,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 
-const  Blog = ({posts}) => {
+const  BlogIndex = ({posts}) => {
  
     return (
       <div>
@@ -24,4 +24,4 @@ const  Blog = ({posts}) => {
 
 
 
-export default Blog;
+export default BlogIndex;

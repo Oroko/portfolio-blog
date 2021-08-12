@@ -2,7 +2,7 @@
 import { getPosts } from "../actions/index";
 import React, { useEffect } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import Blog from '../components/Blog'
+import BlogIndex from '../components/BlogIndex'
 import BlogInput from "../components/BlogInput";
 
 
@@ -22,7 +22,7 @@ const BlogContainer = () => {
     return (
       <div>
         <BlogInput />
-        <Blog posts={posts} />
+        <BlogIndex posts={posts} />
       </div>
     );
   }
