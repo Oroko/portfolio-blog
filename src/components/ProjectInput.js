@@ -1,6 +1,12 @@
 import React from 'react'
+import React, {useState, useEffect} from 'react'
 
-function ProjectInput() {
+const  ProjectInput = () => {
+  const [project, setProject] = useState({
+    title: '',
+    description: '',
+    stacks: ''
+  })
   return (
     <div>
       
