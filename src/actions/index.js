@@ -56,3 +56,20 @@ export const getProjects = () => {
       );
   };
 };
+
+export const addProject = (project) => {
+  console.log(project)
+  console.log(project);
+  return (dispatch) => {
+    fetch("http://localhost:3000/api/v1/projects", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(project),
+    })
+      .then((resp) => resp.json())
+      .then((project) => dispatch({ type: "ADD_PROJECT", payload: project }));
+  };
+};
