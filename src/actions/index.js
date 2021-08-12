@@ -1,14 +1,4 @@
-//import axios from 'axios'
-//const API_URL = "http://localhost:3000/api/v1";
 
-// export const getPosts = () => {
-//   const request = axios.get(`${API_URL}/posts`)
-//   return (dispatch) => {
-//     request.then(({ data }) => {
-//       dispatch({type: 'GET_POSTS', payload: data })
-//     })
-//   }
-// }
 
 export const getPosts = () => {
   return (dispatch) => {
@@ -49,6 +39,19 @@ export const getPost = (id) => {
         dispatch({
           type: "GET_POST",
           payload: post,
+        })
+      );
+  };
+};
+
+export const getProjects = () => {
+  return (dispatch) => {
+    fetch("http://localhost:3000/api/v1/projects")
+      .then((resp) => resp.json())
+      .then((projects) =>
+        dispatch({
+          type: "GET_PROJECTS",
+          payload: projects,
         })
       );
   };

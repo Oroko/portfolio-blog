@@ -17,7 +17,7 @@ const BlogContainer = () => {
     dispatch(getPosts())
   },[dispatch])
     
-  
+  console.log(posts)
   
     return (
       <div>
