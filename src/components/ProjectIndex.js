@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Projects() {
+function ProjectIndex() {
   return (
     <div>
       Projects
@@ -8,4 +8,4 @@ function Projects() {
   )
 }
 
-export default Projects
+export default ProjectIndex
