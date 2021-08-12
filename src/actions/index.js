@@ -24,6 +24,7 @@ export const getPosts = () => {
 }
 
 export const addPost = (post) => {
+  console.log(post)
     return (dispatch) => {
       fetch("http://localhost:3000/api/v1/posts", {
         method: "POST",
@@ -39,3 +40,16 @@ export const addPost = (post) => {
         );
     };
 }
+
+export const getPost = (id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/posts/${id}`)
+      .then((resp) => resp.json())
+      .then((post) =>
+        dispatch({
+          type: "GET_POST",
+          payload: post,
+        })
+      );
+  };
+};

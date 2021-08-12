@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import {addPost} from '../actions/index'
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addPost } from "../actions/index";
 import {
   Button,
   FormControl,
   FormLabel,
+  Input,
   Textarea,
   Modal,
   ModalBody,
@@ -17,24 +18,67 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
+const BlogInput = () => {
+  const [post, setPost] = useState({
+    title: '',
+    content:''
+  });
+  
+  const [isSaving, setSaving] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch = useDispatch();
 
-const  BlogInput =() => {
-  const [post, setPost] = useState('')
-  const dispatch = useDispatch()
   const handleChange = (event) => {
-    setPost({
-      [event.target.name]: event.target.value
-    })
-  }
+    console.log(event.target.value)
+    setPost({...post,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    dispatch(addPost(post))
-    setPost('')
-  }
+  const handleAddPost = () => {
+    //event.preventDefault();
+    dispatch(addPost(post));
+    onClose()
+    setPost("");
+  };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <>
+      <Button onClick={onOpen} colorScheme="blue">
+        Add new Post
+      </Button>
+      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+        <ModalOverlay>
+          <ModalContent>
+            <ModalHeader>Add new post</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+            
+              <FormControl >
+                <FormLabel>Post title</FormLabel>
+                <Input
+                  type="text"
+                  onChange={(event) => handleChange(event)}
+                  name="title"
+                />
+                <FormLabel>Post Content</FormLabel>
+                <Textarea
+                  name="content"
+                  onChange={(event) => handleChange(event)}
+                />
+              </FormControl>
+            </ModalBody>
+            <ModalFooter>
+              <HStack spacing={4}>
+                <Button  onClick={onClose}>Close</Button>
+                <Button type="submit" onClick={(event) => handleAddPost()} colorScheme="blue" isLoading={isSaving}>
+                  Save
+                </Button>
+              </HStack>
+            </ModalFooter>
+          </ModalContent>
+        </ModalOverlay>
+      </Modal>
+      {/* <form onSubmit={handleSubmit}>
         <p>
           <label>Title</label>
           <input type="text" onChange={handleChange} name="title" />
@@ -50,9 +94,9 @@ const  BlogInput =() => {
         </p>
 
         <button type="submit">Add Post</button>
-      </form>
-    </div>
+      </form> */}
+    </>
   );
-}
+};
 
-export default BlogInput
+export default BlogInput;
