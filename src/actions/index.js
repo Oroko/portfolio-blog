@@ -73,3 +73,16 @@ export const addProject = (project) => {
       .then((project) => dispatch({ type: "ADD_PROJECT", payload: project }));
   };
 };
+
+export const getProject = (id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/projects/${id}`)
+      .then((resp) => resp.json())
+      .then((project) =>
+        dispatch({
+          type: "GET_PROJECT",
+          payload: project,
+        })
+      );
+  };
+};

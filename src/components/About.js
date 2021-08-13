@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Text, Box, VStack, Flex } from "@chakra-ui/react";
 import Profile from "./Profile";
+import { Container } from "@chakra-ui/react";
 import { LoremIpsum } from "react-lorem-ipsum";
 
 const About = () => {
@@ -25,6 +26,7 @@ const About = () => {
         </Text>
       </Box>
       <Box>
+      
         <Text w='50%' mx="auto">
           <LoremIpsum p={2} />
         </Text>

@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Home from './components/Home'
 import BlogPost  from './components/BlogPost';
 import ProjectContainer from './containers/ProjectContainer';
+import ProjectShow from './components/ProjectShow';
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/blogPost/:id">
           <BlogPost />
+        </Route>
+        <Route path="/projectShow/:id">
+          <ProjectShow />
         </Route>
       </Switch>
     </Router>
