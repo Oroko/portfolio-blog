@@ -1,18 +1,20 @@
 
 import React from 'react'
+import { SimpleGrid } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 function ProjectIndex({projects}) {
   console.log(projects)
   return (
-    <div>
+    <SimpleGrid>
       {projects &&
         projects.map((project) => (
-          <div key={project.id}>
+          <Link key={project.id} to={`/projectShow/${project.id}`}>
             <p>{project.title}</p>
             <img src={project.img_url} alt="projectimage" />
-          </div>
+          </Link>
         ))}
-    </div>
+    </SimpleGrid>
   );
 }
 

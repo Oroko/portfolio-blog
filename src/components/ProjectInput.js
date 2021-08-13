@@ -82,7 +82,7 @@ const  ProjectInput = () => {
                 <Textarea
                   name="description"
                   onChange={(event) => handleChange(event)}
-                  height="325px"
+                  height="200px"
                 />
                 <FormLabel>Project Stacks</FormLabel>
                 <Stacks onChange={handleStackChange}/>
