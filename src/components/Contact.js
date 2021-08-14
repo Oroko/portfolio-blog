@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Flex,
@@ -8,7 +7,7 @@ import {
   FormLabel,
   Input,
   Button,
-  Textarea
+  Textarea,
 } from "@chakra-ui/react";
 
 function Contact() {
@@ -18,7 +17,6 @@ function Contact() {
         mt={10}
         p={8}
         width="500px"
-        
         borderWidth={1}
         borderRadius={8}
         boxShadow="lg"
@@ -40,7 +38,13 @@ function Contact() {
               <FormLabel>Message</FormLabel>
               <Textarea type="text" />
             </FormControl>
-            <Button width="full" mt={4} type="submit">
+            <Button
+              type="submit"
+              colorScheme="teal"
+              variant="outline"
+              width="full"
+              mt={4}
+            >
               Submit
             </Button>
           </form>
@@ -48,7 +52,6 @@ function Contact() {
       </Box>
     </Flex>
   );
-  
 }
 
-export default Contact
+export default Contact;
