@@ -3,6 +3,9 @@ import React, {useState,} from 'react'
 import { useDispatch } from "react-redux";
 import { addProject } from '../actions/index'
 import Stacks from '../components/Stacks'
+import { IconButton } from "@chakra-ui/button";
+import { FaPlus } from "react-icons/fa";
+
 import {
   Button,
   FormControl,
@@ -52,9 +55,15 @@ const  ProjectInput = () => {
   };
   return (
     <>
-      <Button onClick={onOpen} alignItems="center" colorScheme="teal">
-        Add new Post
-      </Button>
+      <IconButton
+        icon={<FaPlus/>}
+        onClick={onOpen}
+        alignItems="center"
+        colorScheme="teal"
+        variant="outline"
+        mb="10px"
+      />
+        
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay>
           <ModalContent maxW="50rem">
@@ -85,7 +94,7 @@ const  ProjectInput = () => {
                   height="200px"
                 />
                 <FormLabel>Project Stacks</FormLabel>
-                <Stacks onChange={handleStackChange}/>
+                <Stacks onChange={handleStackChange} />
               </FormControl>
             </ModalBody>
             <ModalFooter>
